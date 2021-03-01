@@ -1,12 +1,15 @@
 package com.eric.spring.boot.reactive.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import reactor.core.publisher.Mono;
 
 @Controller
 public class HomeController {
 
-	Mono<String> home(){
+	@GetMapping(value = "/")
+	public Mono<String> home(){
 		return Mono.just("home");
 	}
 }
