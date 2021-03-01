@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Spring Boot Reactive Example - Testing Mono and Flux flow</title>
 </head>
 <body>
@@ -11,5 +11,25 @@
 		This example will start from basic Spring Boot Reactive application.
 		It will be further enhanced with Spring reactive data flow and cloud native functionality.
 	 </p>
+	 
+	 <div class="container">
+    <h2 class="text-muted">Spring Boot and Server Events Tutorial Using Webflux and Reactive API</h2>
+    <table class="table table-striped" id="kitchenDishes">
+        <thead>
+        <tr>
+            <th class="bold-font">Description</th>
+            <th class="bold-font">Delivered</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="kitchDish : ${kitchenDishes}">
+            <td>[[${kitchDish.description}]]</td>
+            <td>[[${kitchDish.delivered}]]</td>
+        </tr>
+        </tbody>
+    </table>
+	</div>
+	
+	<script data-th-src="@{/js/main.js}"></script>
 </body>
 </html>

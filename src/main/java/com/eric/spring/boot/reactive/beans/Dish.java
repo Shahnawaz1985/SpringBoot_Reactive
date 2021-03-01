@@ -13,18 +13,24 @@ public class Dish implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -478785039678504943L;
-	
+
 	private String description;
 	private boolean delivered = false;
-	
+
 	public Dish() {
-		
+
 	}
-	
+
 	public Dish(String description) {
 		this.description = description;
 	}
-	
+
+	public Dish(String description, boolean delivered) {
+		this.description = description;
+		this.delivered = delivered;
+	}
+	 
+
 	public static Dish deliver(Dish dish) {
 		Dish deliveredDish = new Dish(dish.description);
 		deliveredDish.delivered = true;
@@ -38,6 +44,13 @@ public class Dish implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	
+
+	public boolean isDelivered() {
+		return delivered;
+	}
+
 
 	@Override
 	public int hashCode() {
@@ -70,14 +83,12 @@ public class Dish implements Serializable {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Dish {description=");
+		builder.append("Dish {description:'");
 		builder.append(description);
-		builder.append(", delivered=");
+		builder.append("', delivered:");
 		builder.append(delivered);
 		builder.append("}");
 		return builder.toString();
 	}
-	
-	
 
 }

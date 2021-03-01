@@ -18,10 +18,13 @@ import reactor.core.publisher.Flux;
 public class KitchenService {
 	
 	private List<Dish> menu = Arrays.asList(
-			new Dish("Chicken Curry"),
-			new Dish("Veg Soup"),
-			new Dish("Sweet potato"),
-			new Dish("Egg curry"));
+			new Dish("Chicken Curry", false),
+			new Dish("Veg Soup", false),
+			new Dish("Sweet potato", false),
+			new Dish("Egg curry", false),
+			new Dish("Fish Fry", false),
+			new Dish("Chilly Potato", false),
+			new Dish("Veg Manchurian", false));
 	
 	private Random picker = new Random();
 	
@@ -31,6 +34,14 @@ public class KitchenService {
 	public Flux<Dish> getDishes(){
 		return Flux.<Dish> generate(sink -> sink.next(randomDish()))
 				.delayElements(Duration.ofMillis(250));
+	}
+	
+	
+	public Flux<Dish> getDishesWithInterval(){
+		return Flux.interval(Duration.ofSeconds(2))
+				.onBackpressureDrop()
+				.map(interval -> randomDish());
+				//.flatMapIterable(dish -> dish);
 	}
 	
 	/**
