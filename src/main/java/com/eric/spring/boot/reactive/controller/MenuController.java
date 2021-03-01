@@ -29,7 +29,10 @@ public class MenuController {
 		return this.kitchenService.getDishes();
 	}
 	
-	/**@GetMapping(value = "/dish-finder-flux", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+	/**
+	 * @return ResponseEntity<Flux<Dish>>
+	 */
+	@GetMapping(value = "/dish-finder-flux", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	public ResponseEntity<Flux<Dish>> servesDishes(){
 		Flux<Dish> servedDish = this.kitchenService.getDishes();
 		
@@ -38,7 +41,7 @@ public class MenuController {
 		return ResponseEntity.ok()
 			      //.headers(responseHeaders)
 			      .body(servedDish);
-	}*/
+	}
 	
 	/**
 	 * @return Flux<Dish>

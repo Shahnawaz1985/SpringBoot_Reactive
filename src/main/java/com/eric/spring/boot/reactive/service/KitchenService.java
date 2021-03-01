@@ -18,13 +18,13 @@ import reactor.core.publisher.Flux;
 public class KitchenService {
 	
 	private List<Dish> menu = Arrays.asList(
-			new Dish("Chicken Curry", false),
-			new Dish("Veg Soup", false),
-			new Dish("Sweet potato", false),
-			new Dish("Egg curry", false),
-			new Dish("Fish Fry", false),
-			new Dish("Chilly Potato", false),
-			new Dish("Veg Manchurian", false));
+			new Dish("Chicken Curry"),
+			new Dish("Veg Soup"),
+			new Dish("Sweet potato"),
+			new Dish("Egg curry"),
+			new Dish("Fish Fry"),
+			new Dish("Chilly Potato"),
+			new Dish("Veg Manchurian"));
 	
 	private Random picker = new Random();
 	

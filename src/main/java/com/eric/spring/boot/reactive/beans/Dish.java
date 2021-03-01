@@ -21,16 +21,27 @@ public class Dish implements Serializable {
 
 	}
 
+	/**
+	 * @param description description
+	 */
 	public Dish(String description) {
 		this.description = description;
 	}
 
+	/**
+	 * @param description description
+	 * @param delivered delivered
+	 */
 	public Dish(String description, boolean delivered) {
 		this.description = description;
 		this.delivered = delivered;
 	}
 	 
 
+	/** 
+	 * @param dish dish
+	 * @return
+	 */
 	public static Dish deliver(Dish dish) {
 		Dish deliveredDish = new Dish(dish.description);
 		deliveredDish.delivered = true;

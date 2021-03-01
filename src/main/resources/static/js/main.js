@@ -1,3 +1,7 @@
+/**
+ * JS File to handle server side events
+ * @returns
+ */
 function LoadKitchenDataa() {
     this.source = null;
     this.start = function () {
