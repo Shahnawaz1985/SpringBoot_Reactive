@@ -11,7 +11,7 @@ import com.eric.spring.boot.reactive.collections.Item;
  * @author Shahnawaz
  *
  */
-//@Repository
+@Repository
 public interface BlockingItemRepository extends MongoRepository<Item, String> {
 
 }

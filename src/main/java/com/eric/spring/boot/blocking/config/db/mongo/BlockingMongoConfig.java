@@ -33,8 +33,15 @@ public class BlockingMongoConfig extends AbstractMongoClientConfiguration  {
         //String host = environment.getProperty("spring.data.mongodb.host", String.class);
         //String database = environment.getProperty("spring.data.mongodb.database", String.class);
         //return MongoClients.create(String.format("mongodb://%s:%d/%s", host, port, database));spring.data.mongodb.uri
-    	final ConnectionString connString = new ConnectionString(environment.getProperty("spring.data.mongodb.uri"));
-    	return MongoClients.create(connString);
+    	int port = environment.getProperty("spring.data.mongodb.port", Integer.class);
+        String host = environment.getProperty("spring.data.mongodb.host", String.class);
+        String database = environment.getProperty("spring.data.mongodb.database", String.class);
+        return MongoClients.create(String.format("mongodb://%s:%d/%s", host, port, database));
+		/*
+		 * final ConnectionString connString = new
+		 * ConnectionString(environment.getProperty("spring.data.mongodb.uri")); return
+		 * MongoClients.create(connString);
+		 */
     }
 
     protected String getDatabaseName() {
