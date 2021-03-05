@@ -3,6 +3,12 @@ package com.eric.spring.boot.reactive.client;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+/**
+ * Client for testing Spring Reactive application.
+ * @author Shahnawaz
+ *
+ */
 @SpringBootApplication(scanBasePackages = {"com.eric.spring.boot.reactive.config"})
 public class SpringBootReactiveApplication {
 
