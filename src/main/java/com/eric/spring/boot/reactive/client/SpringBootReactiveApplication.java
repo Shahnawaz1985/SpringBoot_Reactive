@@ -9,7 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Shahnawaz
  *
  */
+//, exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class, MongoReactiveAutoConfiguration.class, EmbeddedMongoAutoConfiguration.class})
 @SpringBootApplication(scanBasePackages = {"com.eric.spring.boot.reactive.config"})
+
 public class SpringBootReactiveApplication {
 
 	public static void main(String[] args) {
