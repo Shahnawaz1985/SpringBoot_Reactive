@@ -1,6 +1,7 @@
 package com.eric.spring.boot.reactice.repository;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 import com.eric.spring.boot.reactive.collections.Item;
 
@@ -10,6 +11,6 @@ import com.eric.spring.boot.reactive.collections.Item;
  *
  */
 //@Repository
-public interface ItemRepository extends ReactiveMongoRepository<Item, String> {
+public interface ItemRepository extends ReactiveCrudRepository<Item, String> {
 
 }
