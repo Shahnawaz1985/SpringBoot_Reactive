@@ -12,7 +12,7 @@ import com.eric.spring.boot.reactice.repository.ItemRepository;
  *
  */
 @Controller
-public class MongoTestController {
+public class MongoReactiveController {
 	
 	/*
 	 * @Autowired ReactiveMongoOperations operations;
