@@ -48,7 +48,7 @@
             </tr>
         </thead>
         <tbody>
-        <tr th:each="cartItem : ${cart.cartItems}">
+        <tr th:each="cartItem, stat : ${myCartItems}">
             <td th:text="${cartItem.item.id}"></td>
             <td th:text="${cartItem.item.name}"></td>
             <td th:text="${cartItem.quantity}"></td>
