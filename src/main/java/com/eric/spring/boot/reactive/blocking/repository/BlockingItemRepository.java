@@ -4,7 +4,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.eric.spring.boot.reactive.collections.Item;
+import com.eric.spring.boot.reactive.collections.Items;
 
 /**
  * 
@@ -12,6 +12,6 @@ import com.eric.spring.boot.reactive.collections.Item;
  *
  */
 @Repository
-public interface BlockingItemRepository extends MongoRepository<Item, String> {
+public interface BlockingItemRepository extends MongoRepository<Items, String> {
 
 }

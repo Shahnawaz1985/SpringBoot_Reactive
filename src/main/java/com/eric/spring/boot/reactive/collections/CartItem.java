@@ -15,23 +15,23 @@ public class CartItem implements Serializable {
 	 */
 	private static final long serialVersionUID = 3889238905876987343L;
 	
-	private Item item;
+	private Items item;
 	private int quantity;
 	
-	private CartItem() {
+	public CartItem() {
 		
 	}
 	
-	public CartItem(Item item) {
+	public CartItem(Items item) {
 		this.item = item;
 		this.quantity = 1;
 	}
 
-	public Item getItem() {
+	public Items getItem() {
 		return item;
 	}
 
-	public void setItem(Item item) {
+	public void setItem(Items item) {
 		this.item = item;
 	}
 
@@ -41,6 +41,10 @@ public class CartItem implements Serializable {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	
+	public void increment() {
+		this.quantity++;
 	}
 
 	@Override

@@ -13,8 +13,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author Shahnawaz
  *
  */
-@Document(value="carts")
-public class Cart implements Serializable {
+//@Document(value="carts")
+public class Carts implements Serializable {
 
 	/**
 	 * 
@@ -25,15 +25,15 @@ public class Cart implements Serializable {
 	private String id;
 	private List<CartItem> cartItems;
 	
-	private Cart() {
+	public Carts() {
 		
 	}
 	
-	public Cart(String id) {
+	public Carts(String id) {
 		this(id, new ArrayList<>());
 	}
 	
-	public Cart(String id, List<CartItem> cartItems) {
+	public Carts(String id, List<CartItem> cartItems) {
 		this.id = id;
 		this.cartItems = cartItems;
 	}
@@ -71,7 +71,7 @@ public class Cart implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cart other = (Cart) obj;
+		Carts other = (Carts) obj;
 		if (cartItems == null) {
 			if (other.cartItems != null)
 				return false;

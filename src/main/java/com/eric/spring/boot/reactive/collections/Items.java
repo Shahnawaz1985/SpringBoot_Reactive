@@ -11,8 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author Shahnawaz
  *
  */
-@Document(value="items")
-public class Item implements Serializable {
+//@Document(value="items")
+public class Items implements Serializable {
 
 	/**
 	 * 
@@ -24,11 +24,11 @@ public class Item implements Serializable {
 	private String name;
 	private double price;
 	
-	private Item() {
+	public Items() {
 		
 	}
 	
-	public Item(String name, double price) {
+	public Items(String name, double price) {
 		this.name = name;
 		this.price = price;
 	}
@@ -47,6 +47,10 @@ public class Item implements Serializable {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 	@Override
@@ -69,7 +73,7 @@ public class Item implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Item other = (Item) obj;
+		Items other = (Items) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
