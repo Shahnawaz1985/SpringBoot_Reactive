@@ -14,6 +14,11 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * 
+ * @author Shahnawaz
+ *
+ */
 @Configuration
 //@EntityScan(basePackages = {"com.eric.spring.boot.reactive.collections"})
 @EnableAutoConfiguration(exclude={MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})

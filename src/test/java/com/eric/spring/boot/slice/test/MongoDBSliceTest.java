@@ -12,6 +12,11 @@ import com.eric.spring.boot.reactive.collections.Items;
 
 import reactor.test.StepVerifier;
 
+/**
+ * 
+ * @author Shahnawaz
+ *
+ */
 @SpringBootTest(classes = {com.eric.spring.boot.reactive.test.config.ApplicationConfiguration.class})
 @AutoConfigureDataMongo
 public class MongoDBSliceTest {
