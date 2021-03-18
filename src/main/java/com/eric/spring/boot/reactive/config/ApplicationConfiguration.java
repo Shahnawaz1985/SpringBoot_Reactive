@@ -17,12 +17,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Configuration
 //@EntityScan(basePackages = {"com.eric.spring.boot.reactive.collections"})
 @EnableAutoConfiguration(exclude={MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
-@EnableWebFlux
 //@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 //@EnableMongoRepositories(basePackages = {"com.eric.spring.boot.reactive.blocking.repository"})
 @EnableReactiveMongoRepositories(basePackages = {"com.eric.spring.boot.reactice.repository"})
 @ComponentScan(basePackages = {"com.eric.spring.boot.reactive.config.db.mongo", "com.eric.spring.boot.reactive.controller", 
-		"com.eric.spring.boot.reactive.service","com.eric.spring.boot.reactive.mongo"})
+		"com.eric.spring.boot.reactive.service","com.eric.spring.boot.reactive.mongo", "com.eric.spring.boot.reactive.webflux.config", "com.eric.spring.boot.reactive.handlers"})
 @EntityScan(basePackages = {"com.eric.spring.boot.reactive.collections"})
 public class ApplicationConfiguration {
 	

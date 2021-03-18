@@ -57,11 +57,11 @@ public class MongoReactiveController {
 		return ResponseEntity.ok().body(resultCarts);
 	}
 
-	/**
+	
 	@PostMapping("/add/{id}") // <1>
 	Mono<String> addToCart(@PathVariable String id) { 
 		return this.cartRepository.findById("My Cart") 
-				.defaultIfEmpty(new Cart("My Cart")) 
+				.defaultIfEmpty(new Carts("My Cart")) 
 				.flatMap(cart -> cart.getCartItems().stream() 
 						.filter(cartItem -> cartItem.getItem() 
 								.getId().equals(id)) 
@@ -81,7 +81,7 @@ public class MongoReactiveController {
 				.flatMap(cart -> this.cartRepository.save(cart)) 
 				.thenReturn("redirect:/"); 
 	}
-	// end::3[]
+	
 
 	@PostMapping
 	Mono<String> createItem(@ModelAttribute Items newItem) {
@@ -126,5 +126,5 @@ public class MongoReactiveController {
     	   return null;
        }
 	}
-    */				   
+   			   
 }
