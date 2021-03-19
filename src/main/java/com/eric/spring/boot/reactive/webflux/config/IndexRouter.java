@@ -26,7 +26,6 @@ public class IndexRouter {
 	public RouterFunction<ServerResponse> route(IndexHandler indexHandler) {
     return RouterFunctions
 	      .route(RequestPredicates.GET("/").and(RequestPredicates.accept(MediaType.TEXT_HTML)), indexHandler::home);
-	      //.andRoute(RequestPredicates.GET("/static/js/*").and(RequestPredicates.accept(MediaType.TEXT_HTML)), indexHandler::staticContent) ;
 	  }
 	
 	/**
@@ -36,12 +35,6 @@ public class IndexRouter {
 	@Bean
 	public RouterFunction<ServerResponse> staticContentRouter() {
 		Resource staticResource = new ClassPathResource("static/", getClass().getClassLoader());
-		try {
-			System.out.println("staticResource path : "+staticResource.getFile().getAbsolutePath());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	    return RouterFunctions
 	      .resources("/**", staticResource);
 	}
