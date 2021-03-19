@@ -1,5 +1,7 @@
 package com.eric.spring.boot.reactive.handlers;
 
+import java.io.IOException;
+
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -30,5 +32,16 @@ public class IndexHandler {
 		return ServerResponse.ok().contentType(MediaType.TEXT_HTML)
 				.body(BodyInserters.fromResource(indexResource));
 	}
+	
+	/*
+	 * public Mono<ServerResponse> staticContent(ServerRequest request){ Resource
+	 * staticResource = new ClassPathResource("/static/*.js",
+	 * getClass().getClassLoader()); try {
+	 * System.out.println("staticResource path : "+staticResource.getFile().
+	 * getAbsolutePath()); } catch (IOException e) { // TODO Auto-generated catch
+	 * block e.printStackTrace(); } return
+	 * ServerResponse.ok().contentType(MediaType.TEXT_HTML)
+	 * .body(BodyInserters.fromResource(staticResource)); }
+	 */
 
 }
