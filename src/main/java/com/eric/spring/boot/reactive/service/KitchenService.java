@@ -32,7 +32,6 @@ public class KitchenService {
 	 * @return Flux<Dish>
 	 */
 	public Flux<Dish> getDishes(){
-		//block();
 		return Flux.<Dish> generate(sink -> sink.next(randomDish()))
 				.delayElements(Duration.ofMillis(250));
 	}
@@ -51,15 +50,5 @@ public class KitchenService {
 	private Dish randomDish() {
 		return menu.get(picker.nextInt(menu.size()));
 	}
-	
-	/**
-	private void block() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }*/
-			
 
 }

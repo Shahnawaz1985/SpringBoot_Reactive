@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Component;
 
-import com.eric.spring.boot.reactive.blocking.repository.BlockingItemRepository;
 import com.eric.spring.boot.reactive.collections.Items;
 
 /**

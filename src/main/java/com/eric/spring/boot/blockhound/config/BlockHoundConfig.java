@@ -12,8 +12,6 @@ public class BlockHoundConfig implements BlockHoundIntegration {
 	@Override
 	public void applyTo(Builder builder) {
 		builder.disallowBlockingCallsInside(TemplateEngine.class.getCanonicalName(), "process");
-		//builder.disallowBlockingCallsInside("java.io.Writer", "flush");
-		//flush//java.io.Writer
 	}
 
 }
