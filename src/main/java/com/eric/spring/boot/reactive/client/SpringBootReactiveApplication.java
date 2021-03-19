@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import reactor.blockhound.BlockHound;
+import reactor.core.publisher.Hooks;
 
 
 /**
@@ -19,6 +20,8 @@ public class SpringBootReactiveApplication {
 		
 		//BlockHound.builder().disallowBlockingCallsInside(TemplateEngine.class.getCanonicalName(), "process").install();
 		BlockHound.install();
+		//Switches on Reactor Backtracking.
+		Hooks.onOperatorDebug();
 		
 		SpringApplication.run(SpringBootReactiveApplication.class, args);
 	}
