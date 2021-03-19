@@ -1,4 +1,4 @@
-package com.eric.spring.boot.reactive.webflux.config;
+package com.eric.spring.boot.reactive.webflux.router;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

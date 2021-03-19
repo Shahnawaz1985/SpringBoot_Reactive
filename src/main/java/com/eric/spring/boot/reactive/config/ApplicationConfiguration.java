@@ -20,8 +20,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 //@EnableMongoRepositories(basePackages = {"com.eric.spring.boot.reactive.blocking.repository"})
 @EnableReactiveMongoRepositories(basePackages = {"com.eric.spring.boot.reactice.repository"})
-@ComponentScan(basePackages = {"com.eric.spring.boot.reactive.config.db.mongo", "com.eric.spring.boot.reactive.controller", 
-		"com.eric.spring.boot.reactive.service","com.eric.spring.boot.reactive.mongo", "com.eric.spring.boot.reactive.webflux.config", "com.eric.spring.boot.reactive.handlers"})
+@ComponentScan(basePackages = {"com.eric.spring.boot.blockhound.config", "com.eric.spring.boot.reactive.config.db.mongo", "com.eric.spring.boot.reactive.controller", 
+		"com.eric.spring.boot.reactive.service","com.eric.spring.boot.reactive.mongo", "com.eric.spring.boot.reactive.webflux.config", "com.eric.spring.boot.reactive.handlers", "com.eric.spring.boot.reactive.webflux.router"})
 @EntityScan(basePackages = {"com.eric.spring.boot.reactive.collections"})
 public class ApplicationConfiguration {
 	
