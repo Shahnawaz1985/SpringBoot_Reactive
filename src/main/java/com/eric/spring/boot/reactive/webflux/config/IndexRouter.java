@@ -29,7 +29,10 @@ public class IndexRouter {
 	      //.andRoute(RequestPredicates.GET("/static/js/*").and(RequestPredicates.accept(MediaType.TEXT_HTML)), indexHandler::staticContent) ;
 	  }
 	
-	
+	/**
+	 * Router Function for static content.
+	 * @return
+	 */
 	@Bean
 	public RouterFunction<ServerResponse> staticContentRouter() {
 		Resource staticResource = new ClassPathResource("static/", getClass().getClassLoader());
