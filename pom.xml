@@ -16,7 +16,7 @@
 	<description>Spring Boot Reactive Application</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
@@ -70,11 +70,11 @@
 			<artifactId>blockhound</artifactId>
 			<version>1.0.4.RELEASE</version>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
-		</dependency> -->
+		</dependency> 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -84,17 +84,54 @@
 					<groupId>org.junit.vintage</groupId>
 					<artifactId>junit-vintage</artifactId>
 				</exclusion>
+				<exclusion>
+					<artifactId>junit</artifactId>
+					<groupId>junit</groupId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
+    		<groupId>org.junit.vintage</groupId>
+    		<artifactId>junit-vintage-engine</artifactId>
+    		<version>5.7.0</version>
+    		<exclusions>
+	    		<exclusion>
+						<artifactId>junit</artifactId>
+						<groupId>junit</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+      		<groupId>org.junit.platform</groupId>
+      		<artifactId>junit-platform-runner</artifactId>
+      		<!-- <exclusions>
+	    		<exclusion>
+						<artifactId>junit</artifactId>
+						<groupId>junit</groupId>
+				</exclusion>
+			</exclusions>-->
+      </dependency>
+  	  <dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+	  </dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<release>11</release>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
